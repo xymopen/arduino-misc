@@ -30,15 +30,23 @@ void SR04::detach() {
 };
 
 double SR04::read() const {
+	double distance = this->read();
+	
+	delay( 60 );												// we suggest to use over 60ms measurement cycle
+																// in order to prevent trigger signal to the echo signal. 
+	return distance;
+};
+
+double SR04::readUnsafe() const {
 	if ( this->attached() ) {
 		digitalWrite( this->trig_, LOW );
 		delayMicroseconds( 1 );
 		digitalWrite( this->trig_, HIGH );
 		delayMicroseconds( 10 );
-		digitalWrite( this->trig_, LOW );						// trigger a measure by a 10us pulse
+		digitalWrite( this->trig_, LOW );						//  supply a short 10uS pulse to the trigger input to start the ranging
 
 		double t_us = pulseIn( this->echo_, HIGH );
-		double d_mm = t_us * 1e-6 * 340 * 1e3 / 2;				// calculate distance
+		double d_mm = t_us * 1e-6 * soundspeed_ * 1e3 / 2;		// calculate distance
 
 		return d_mm;
 	} else {

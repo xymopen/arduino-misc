@@ -9,6 +9,7 @@ public:
 	bool attach( int trig, int echo );
 	void detach();
 	double read() const;
+	double readUnsafe() const;
 	bool attached() const;
 	static void calibrate( double temp );
 private:
