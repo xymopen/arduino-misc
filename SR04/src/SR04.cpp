@@ -30,7 +30,7 @@ void SR04::detach() {
 };
 
 double SR04::read() const {
-	double distance = this->read();
+	double distance = readUnsafe();
 	
 	delay( 60 );												// we suggest to use over 60ms measurement cycle
 																// in order to prevent trigger signal to the echo signal. 
