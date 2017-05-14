@@ -5,16 +5,14 @@
 
 class SR04 {
 public:
-	SR04();
-	bool attach( int trig, int echo );
-	void detach();
+	static const unsigned char MEASURE_INTERVAL;
+	SR04( const unsigned char TRIG, const unsigned char ECHO );
+	void begin() const;
 	double read() const;
 	double readUnsafe() const;
-	bool attached() const;
 	static void calibrate( double temp );
 private:
-	bool isAttached_;
-	int trig_, echo_;
+	const unsigned char TRIG_, ECHO_;
 	static double soundspeed_;
 };
 
