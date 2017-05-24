@@ -6,7 +6,7 @@
 class SR04 {
 public:
 	static const unsigned char MEASURE_INTERVAL;
-	SR04( const unsigned char TRIG, const unsigned char ECHO );
+	SR04( const unsigned char trig, const unsigned char echo );
 	void begin() const;
 	double read() const;
 	double readUnsafe() const;

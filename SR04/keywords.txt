@@ -11,11 +11,9 @@ SR04		KEYWORD1	SR04
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-attach		KEYWORD2
-detach		KEYWORD2
+begin		KEYWORD2
 read		KEYWORD2
 readUnsafe	KEYWORD2
-attached	KEYWORD2
 calibrate	KEYWORD2
 
 #######################################
