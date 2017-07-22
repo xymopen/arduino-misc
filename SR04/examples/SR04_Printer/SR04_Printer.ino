@@ -1,6 +1,6 @@
 #include "SR04.h"
 
-SR04 sr04( 2, 3 );	// 2 for trig and 3 for echo
+SR04 sr04( 2, 3 );	// Trig, Echo
 
 void setup() {
 	sr04.begin();
