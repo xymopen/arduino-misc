@@ -1,0 +1,21 @@
+#######################################
+# Syntax Coloring Map StepperDriver
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+StepperDriver	KEYWORD1	StepperDriver
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin			KEYWORD2
+on				KEYWORD2
+off				KEYWORD2
+write			KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
