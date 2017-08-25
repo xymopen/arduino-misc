@@ -37,6 +37,6 @@ double SR04::readUnsafe() const {
 	return d_mm;
 };
 
-void SR04::calibrate( double temp ) {
-	soundspeed_ = 20.05 * sqrt( temp + 273.15 );
+void SR04::calibrate( double celsius  ) {
+	soundspeed_ = 20.05 * sqrt( celsius + 273.15 );
 };

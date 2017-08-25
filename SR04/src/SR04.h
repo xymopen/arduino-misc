@@ -10,7 +10,7 @@ public:
 	void begin() const;
 	double read() const;
 	double readUnsafe() const;
-	static void calibrate( double temp );
+	static void calibrate( double celsius );
 private:
 	const unsigned char TRIG_, ECHO_;
 	static double soundspeed_;
