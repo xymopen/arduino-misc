@@ -20,7 +20,7 @@ void SR04::begin() const {
 
 double SR04::read() const {
 	delay( MEASURE_INTERVAL );									// we suggest to use over 60ms measurement cycle
-																// in order to prevent trigger signal to the echo signal. 
+																// in order to prevent trigger signal to the echo signal.
 	return readUnsafe();
 };
 
