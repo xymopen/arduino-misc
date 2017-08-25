@@ -7,10 +7,21 @@ void setup() {
 };
 
 void loop() {
-	stepper.write( 1000, 500 );
+	stepper.on();
 	delay( 1000 );
-	stepper.write( -1000 );
+
+	stepper.step( 1000 );
+	delay( 1000 );
+
+	stepper.step( -1000, 100 );
+	delay( 1000 );
+
+	stepper.speed( 1000, 500 );
+	delay( 1000 );
+
+	stepper.speed( -1000 );
 	delay( 500 );
+
 	stepper.off();
 	delay( 500 );
 };

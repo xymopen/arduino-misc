@@ -14,15 +14,15 @@ private:
 	const unsigned char STEP_, DIR_, EN_;
 public:
 	StepperDriver(
-		const unsigned char STEP,
-		const unsigned char DIR,
-		const unsigned char EN
+		const unsigned char step,
+		const unsigned char dir,
+		const unsigned char en
 	);
 	void begin() const;
 	void on() const;
 	void off() const;
-	void write( const signed int frequency ) const;
-	void write( const signed int frequency, unsigned long duration ) const;
+	void step( const signed int steps, unsigned int stepsPerSec = 500 ) const;
+	void speed( const signed int stepsPerSec, unsigned long milliseconds = 0 ) const;
 };
 
 inline void StepperDriver::on() const {
@@ -31,6 +31,8 @@ inline void StepperDriver::on() const {
 
 inline void StepperDriver::off() const {
 	digitalWrite( this->EN_, HIGH );
+	digitalWrite( this->DIR_, HIGH );
+	noTone( this->STEP_ );
 };
 
 #endif	// _STEPPER_DRIVER_H

@@ -14,7 +14,8 @@ StepperDriver	KEYWORD1	StepperDriver
 begin			KEYWORD2
 on				KEYWORD2
 off				KEYWORD2
-write			KEYWORD2
+step			KEYWORD2
+speed			KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
