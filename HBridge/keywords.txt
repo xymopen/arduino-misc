@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map SR04
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+HBridge			KEYWORD1	HBridge
+HBridge_Legacy	KEYWORD1	HBridge_Legacy
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin			KEYWORD2
+write			KEYWORD2
+pwmWrite		KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+CW				LITERAL1
+STOP			LITERAL1
+CCW				LITERAL1

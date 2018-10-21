@@ -4,28 +4,28 @@
 #define _HBRIDGE_h
 
 #if defined(ARDUINO) && ARDUINO >= 100
-#include "arduino.h"
+#include "Arduino.h"
 #else
 #include "WProgram.h"
 #endif
 
 enum direction_t {
-	FORWARD = 1,
+	CW = 1,
 	STOP = 0,
-	INVERSE = -1,
+	CCW = -1,
 };
 
 class HBridge {
 	 private:
-		const unsigned char FORWARD_;
-		const unsigned char INVERSE_;
-		const unsigned char ENABLE_;
+		const unsigned char forward;
+		const unsigned char inverse;
+		const unsigned char ENABLE;
 
 	 public:
 		HBridge(
-			const unsigned char forward,
-			const unsigned char inverse,
-			const unsigned char enable
+			const unsigned char in1,
+			const unsigned char in2,
+			const unsigned char ena
 		);
 		void begin() const;
 		void write( enum direction_t direction ) const;
@@ -34,13 +34,13 @@ class HBridge {
 
 class HBridge_Legacy {
 	 private:
-		const unsigned char FORWARD_;
-		const unsigned char INVERSE_;
+		const unsigned char forward;
+		const unsigned char inverse;
 
 	 public:
 		HBridge_Legacy(
-			const unsigned char forward,
-			const unsigned char inverse
+			const unsigned char in1,
+			const unsigned char in2
 		);
 		void begin() const;
 		void write( enum direction_t direction ) const;

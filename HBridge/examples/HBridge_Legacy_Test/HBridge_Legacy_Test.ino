@@ -7,21 +7,21 @@ void setup() {
 };
 
 void loop() {
-	a.write( INVERSE );
+	a.write( CCW );
 	delay( 1000 );
 
 	a.write( STOP );
 	delay( 1000 );
 
-	a.write( FORWARD );
+	a.write( CW );
 	delay( 1000 );
 
 	a.pwmWrite( 127 );
 	delay( 1000 );
-	
+
 	a.pwmWrite( 0 );
 	delay( 1000 );
-		
+
 	a.pwmWrite( -127 );
 	delay( 1000 );
 };
