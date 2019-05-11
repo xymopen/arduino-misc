@@ -82,7 +82,6 @@ public:
 
 	constexpr kernel_list_iterator( kernel_list_node &node, const kernel_list_node T::*member );
 
-	bool operator==( const kernel_list_iterator<T>& rhs ) const;
 	bool operator!=( const kernel_list_iterator<T>& rhs ) const;
 	reference operator*() const;
 	kernel_list_iterator<T>& operator++();

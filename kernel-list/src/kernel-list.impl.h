@@ -83,13 +83,8 @@ constexpr kernel_list_iterator<T>::kernel_list_iterator( kernel_list_node &node,
 }
 
 template<class T>
-inline bool kernel_list_iterator<T>::operator==( const kernel_list_iterator<T> &rhs ) const {
-	return this->node == rhs.node;
-}
-
-template<class T>
 inline bool kernel_list_iterator<T>::operator!=( const kernel_list_iterator<T> &rhs ) const {
-	return !operator==( rhs );
+	return this->node != rhs.node;
 }
 
 template<class T>
