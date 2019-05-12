@@ -12,7 +12,7 @@ inline void kernel_list_node::insertBefore( kernel_list_node &prev ) {
 }
 
 template< class T >
-inline constexpr T* kernel_list_node::owner( const kernel_list_node T::*member ) const {
+inline constexpr T* kernel_list_node::container( const kernel_list_node T::*member ) const {
 	// C++ equivalences of
 	// [offsetof](http://man7.org/linux/man-pages/man3/offsetof.3.html "offsetof(3) - Linux manual page")
 	// and
@@ -89,7 +89,7 @@ inline bool kernel_list_iterator<T>::operator!=( const kernel_list_iterator<T> &
 
 template<class T>
 inline typename kernel_list_iterator<T>::reference kernel_list_iterator<T>::operator*() const {
-	return *( this->node->owner( this->member ) );
+	return *( this->node->container( this->member ) );
 }
 
 template<class T>

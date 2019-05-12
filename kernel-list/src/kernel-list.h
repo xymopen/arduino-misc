@@ -33,7 +33,7 @@ public:
 	void splice( kernel_list &list );
 
 	template< class T >
-	inline constexpr T* owner( const kernel_list_node T::*member ) const;
+	inline constexpr T* container( const kernel_list_node T::*member ) const;
 };
 
 class kernel_list {
