@@ -100,6 +100,6 @@ public:
 	kernel_list_iterator<T> end() const;
 };
 
-#include "kernel-list.impl.h"
+#include "kernel-list.impl.hpp"
 
 #endif	// _KERNEL_LIST_H
