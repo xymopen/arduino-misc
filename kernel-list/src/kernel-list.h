@@ -28,7 +28,7 @@ public:
 	~kernel_list_node();
 
 	void insert( kernel_list_node &other );
-	void insertBefore( kernel_list_node &other );
+	void insert_before( kernel_list_node &other );
 	void earse();
 	void splice( kernel_list &list );
 

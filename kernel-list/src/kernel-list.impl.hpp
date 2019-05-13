@@ -7,7 +7,7 @@ constexpr kernel_list_node::kernel_list_node() : prev_( this ), next_( this ) {
 	/* empty */
 };
 
-inline void kernel_list_node::insertBefore( kernel_list_node &prev ) {
+inline void kernel_list_node::insert_before( kernel_list_node &prev ) {
 	this->prev_->insert( prev );
 }
 
@@ -58,7 +58,7 @@ inline void kernel_list::pop_front() {
 }
 
 inline void kernel_list::push_back( kernel_list_node &node ) {
-	this->head.insertBefore( node );
+	this->head.insert_before( node );
 }
 
 inline void kernel_list::pop_back() {

@@ -91,5 +91,5 @@ void kernel_list::shift_forward( kernel_list::difference_type num ) {
 	kernel_list_node *dst = at( num );
 
 	this->head.earse();
-	dst->insertBefore( this->head );
+	dst->insert_before( this->head );
 }
