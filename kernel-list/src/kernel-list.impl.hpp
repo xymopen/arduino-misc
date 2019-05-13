@@ -93,7 +93,7 @@ inline typename kernel_list_iterator<T>::reference kernel_list_iterator<T>::oper
 }
 
 template<class T>
-inline typename kernel_list_iterator<T>& kernel_list_iterator<T>::operator++() {
+inline kernel_list_iterator<T>& kernel_list_iterator<T>::operator++() {
 	this->node = this->node->next_;
 
 	return *this;
