@@ -34,6 +34,6 @@ void StepperDriver::speed( const signed int stepsPerSec, unsigned long milliseco
 	if ( 0 == stepsPerSec ) {
 		noTone( this->STEP_ );
 	} else {
-		tone( this->STEP_, abs( stepsPerSec ), milliseconds );
+		tone( this->STEP_, abs( stepsPerSec / 2 ), milliseconds );
 	}
 };
