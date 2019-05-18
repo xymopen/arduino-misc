@@ -3,16 +3,13 @@
 
 StepperDriver::StepperDriver(
 	const unsigned char step,
-	const unsigned char dir,
-	const unsigned char en
-): STEP_( step ), DIR_( dir ), EN_( en ) { };
+	const unsigned char dir
+): STEP_( step ), DIR_( dir ) { };
 
 void StepperDriver::begin() const {
 	pinMode( this->STEP_, OUTPUT );
 	pinMode( this->DIR_, OUTPUT );
-	pinMode( this->EN_, OUTPUT );
 
-	digitalWrite( this->EN_, LOW );
 	digitalWrite( this->DIR_, HIGH );
 	noTone( this->STEP_ );
 };
@@ -20,7 +17,6 @@ void StepperDriver::begin() const {
 void StepperDriver::step( const signed int steps, unsigned int stepsPerSec ) const {
 	unsigned long period = 1e6 / 2 / stepsPerSec;
 
-	digitalWrite( this->EN_, LOW );
 	digitalWrite( this->DIR_, steps >= 0 );
 	noTone( this->STEP_ );
 
@@ -33,7 +29,6 @@ void StepperDriver::step( const signed int steps, unsigned int stepsPerSec ) con
 };
 
 void StepperDriver::speed( const signed int stepsPerSec, unsigned long milliseconds ) const {
-	digitalWrite( this->EN_, LOW );
 	digitalWrite( this->DIR_, stepsPerSec >= 0 );
 
 	if ( 0 == stepsPerSec ) {

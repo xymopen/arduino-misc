@@ -1,6 +1,6 @@
 #include <StepperDriver.h>
 
-StepperDriver stepper( 8, 7, 10 );	// STEP, DIR, EN or CLK, CW, EN
+StepperDriver stepper( 8, 7 );	// STEP, DIR or CLK, CW
 
 void setup() {
 	stepper.begin();
